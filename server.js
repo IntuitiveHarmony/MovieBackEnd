@@ -1,8 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const MONGODB_URI  = process.env.MONGODB_URI
+require('dotenv').config()
+
+const PORT = process.env.PORT || 3003;
+
 const Movie = require('./models/movie.js');
+
+const MONGODB_URI  = process.env.MONGODB_URI
 
 const app = express();
 
@@ -66,5 +71,5 @@ app.listen(3000, () => {
 // CONNECT TO ATLAS AND NAME SUBDATABASE
 mongoose.connect(MONGODB_URI)
 mongoose.connection.once('open', ()=>{
-    console.log('connected to ATLAS...');
+    console.log('connected to port: ',PORT);
 })
