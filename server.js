@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const MONGODB_URI  = process.env.MONGODB_URI
 const Movie = require('./models/movie.js');
 
 const app = express();
@@ -62,8 +63,8 @@ app.listen(3000, () => {
 });
 
 
-// CONNECT TO MONGO AND NAME SUBDATABASE
-mongoose.connect('mongodb://localhost:27017/Movies')
+// CONNECT TO ATLAS AND NAME SUBDATABASE
+mongoose.connect(MONGODB_URI)
 mongoose.connection.once('open', ()=>{
-    console.log('connected to mongod...');
+    console.log('connected to ATLAS...');
 })
