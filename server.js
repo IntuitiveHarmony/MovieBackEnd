@@ -6,6 +6,11 @@ require('dotenv').config()
 const PORT = process.env.PORT || 3003;
 
 const Movie = require('./models/movie.js');
+require('dotenv').config()
+
+const PORT = process.env.PORT || 3003;
+
+const MONGODB_URI  = process.env.MONGODB_URI
 
 const MONGODB_URI  = process.env.MONGODB_URI
 
@@ -63,9 +68,10 @@ app.put('/movies/:id', (req, res) => {
 //      CONNECTIONS
 //-----------------------------------------------
 //  CONNECT TO NODEMON
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('Listening...')
 });
+
 
 
 // CONNECT TO ATLAS AND NAME SUBDATABASE
