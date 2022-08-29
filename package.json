@@ -5,6 +5,9 @@
   "name": "moviebackend",
   "description": "",
   "version": "1.0.0",
+  "engines": {
+    "node":"16.16.0"
+  },
   "main": "server.js",
   "repository": {
     "type": "git",
@@ -18,6 +21,7 @@
   "homepage": "https://github.com/IntuitiveHarmony/MovieBackEnd#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mongoose": "^6.5.3"
   }
