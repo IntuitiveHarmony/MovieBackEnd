@@ -2,6 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const Movie = require('./models/movie.js');
+require('dotenv').config()
+
+const PORT = process.env.PORT || 3003;
+
+const MONGODB_URI  = process.env.MONGODB_URI
 
 const app = express();
 
@@ -57,13 +62,13 @@ app.put('/movies/:id', (req, res) => {
 //      CONNECTIONS
 //-----------------------------------------------
 //  CONNECT TO NODEMON
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('Listening...')
 });
 
 
 // CONNECT TO MONGO AND NAME SUBDATABASE
-mongoose.connect('mongodb://localhost:27017/Movies')
+mongoose.connect(MONGODB_URI)
 mongoose.connection.once('open', ()=>{
     console.log('connected to mongod...');
 })
