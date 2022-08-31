@@ -2,9 +2,12 @@ const mongoose = require('mongoose');
 
 const movie = new mongoose.Schema({
   title: String,
-  genre: String,
+  year: String,
+  genre: [String],
   image: String,
+  backdrop: String,
   rating: Number,
+  overview: String,
   watched: Boolean
 })
 
